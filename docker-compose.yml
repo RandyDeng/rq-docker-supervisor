@@ -1,0 +1,32 @@
+version: "3.7"
+services:
+    redis:
+        image: redis:latest
+        expose:
+        - "6379"
+        # enable fully-durable alternative to snapshotting
+        command: ["sh", "-c", "redis-server --appendonly yes"]
+    workers:
+        image: workers
+        build:
+            context: .
+            dockerfile: workers/Dockerfile
+        volumes:
+            - ./workers:/usr/src/workers
+        links:
+            - redis
+        depends_on:
+            - redis
+    rq-dashboard:
+        image: rq-dashboard
+        build:
+            context: .
+            dockerfile: rq-dashboard/Dockerfile
+        ports:
+            - '9181:9181'
+        expose:
+            - "9181"
+        links:
+            - redis
+        depends_on:
+            - redis
