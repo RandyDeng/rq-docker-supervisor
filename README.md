@@ -23,7 +23,7 @@ Simply run the following:
 
 `docker-compose up`
 
-You can verify everything is working by visiting `localhost:9181/`.
+You can verify everything is working by visiting `localhost:9181`.
 
 You should see something similar to the following:
 
