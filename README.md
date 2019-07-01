@@ -1,6 +1,8 @@
 # rq-docker-supervisor
 Minimal example/template of how to start rq workers in docker containers using supervisor.
 
+For a more detailed explanation, visit my blog at [randydeng.com](https://www.randydeng.com/programming/2019/07/01/queuing-asynchronous-jobs-with-rq-docker-and-supervisor.html)
+
 ## Prerequisites
 - Install [docker CE](https://docs.docker.com/v17.09/engine/installation/)
 - Install [docker-compose](https://docs.docker.com/compose/install/)
